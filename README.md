@@ -1,6 +1,6 @@
 **sshpass for UNRAID**
 
-Non-interactive authentication for SSH
+Non-interactive authentication helper for SSH
 
 **Installation:** https://raw.githubusercontent.com/desertwitch/sshpass-unRAID/main/plugin/dwsshpass.plg
 

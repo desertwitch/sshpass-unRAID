@@ -1,0 +1,71 @@
+<?xml version='1.0' standalone='yes'?>
+
+<!DOCTYPE PLUGIN [
+<!ENTITY name      "dwsshpass">
+<!ENTITY author    "desertwitch">
+<!ENTITY version   "2025.01.16">
+<!ENTITY gitURL    "https://raw.githubusercontent.com/&author;/sshpass-unRAID/main">
+<!ENTITY pluginURL "&gitURL;/plugin/&name;.plg">
+<!ENTITY pkgURL    "&gitURL;/packages">
+<!ENTITY plgPATH   "/boot/config/plugins/&name;">
+<!ENTITY emhttp    "/usr/local/emhttp/plugins/&name;">
+]>
+
+<PLUGIN name="&name;" author="&author;" version="&version;" pluginURL="&pluginURL;" min="6.10" icon="key">
+
+<CHANGES>
+## sshpass for UNRAID
+###2025.01.16
+- release note: welcome to the first version of the package.
+</CHANGES>
+
+<FILE Run="/bin/bash">
+<INLINE>
+killall sshpass >/dev/null 2>&amp;1
+exit 0
+</INLINE>
+</FILE>
+
+<!-- plugin package -->
+<FILE Name="&plgPATH;/sshpass-1.10-x86_64-1.txz" Min="6.10" Run="upgradepkg --install-new">
+<URL>&pkgURL;/sshpass-1.10-x86_64-1.txz</URL>
+<MD5>261d8d096d6974e6662584df58ec49cc</MD5>
+</FILE>
+
+<FILE Name="&emhttp;/README.md" Mode="0644">
+<INLINE>
+**sshpass for UNRAID**
+
+Non-interactive authentication for SSH
+</INLINE>
+</FILE>
+
+<FILE Run="/bin/bash">
+<INLINE>
+echo ""
+echo "-------------------------------------------------------------"
+echo " sshpass for UNRAID has been installed."
+echo " Version: &version; / Plugin Maintainer: &author;"
+echo "-------------------------------------------------------------"
+echo ""
+</INLINE>
+</FILE>
+
+<FILE Run="/bin/bash" Method="remove">
+<INLINE>
+killall sshpass >/dev/null 2>&amp;1
+
+removepkg &plgPATH;/*.txz
+rm -rf &plgPATH;
+rm -rf &emhttp;
+
+echo ""
+echo "-----------------------------------------------------------"
+echo " sshpass for UNRAID has been removed."
+echo " Version: &version; / Plugin Maintainer: &author;"
+echo "-----------------------------------------------------------"
+echo ""
+</INLINE>
+</FILE>
+
+</PLUGIN>

@@ -15,8 +15,8 @@
 
 <CHANGES>
 ## sshpass for UNRAID
-###2025.01.16
-- release note: welcome to the first version of the package.
+###2025.01.16a
+- release note: welcome to the first version of the package
 </CHANGES>
 
 <FILE Run="/bin/bash">

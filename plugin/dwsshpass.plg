@@ -3,7 +3,7 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "dwsshpass">
 <!ENTITY author    "desertwitch">
-<!ENTITY version   "2025.01.16c">
+<!ENTITY version   "2025.01.24">
 <!ENTITY gitURL    "https://raw.githubusercontent.com/&author;/sshpass-unRAID/main">
 <!ENTITY pluginURL "&gitURL;/plugin/&name;.plg">
 <!ENTITY pkgURL    "&gitURL;/packages">
@@ -15,7 +15,7 @@
 
 <CHANGES>
 ## sshpass for UNRAID
-###2025.01.16c
+###2025.01.24
 - release note: welcome to the first version of the package
 </CHANGES>
 
